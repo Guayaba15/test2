@@ -1,0 +1,50 @@
+<!-- myapp/templates/myapp/item_detail.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Detail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+        .delete-link {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+<center>
+<h2>Item Detail</h2>
+<p>Name: {{ item.name }}</p>
+<p>Description: {{ item.description }}</p>
+<a href="{% url 'item_edit' pk=item.pk %}" style="color: #ffc107;">Edit</a>
+<a href="{% url 'item_delete' pk=item.pk %}" class="delete-link">Delete</a>
+<a href="{% url 'item_list' %}" style="color: #007bff;">Back to List</a>
+</center>
+
+</body>
+</html>
